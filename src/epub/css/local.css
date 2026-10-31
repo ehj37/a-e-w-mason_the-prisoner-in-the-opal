@@ -49,7 +49,6 @@ p[epub|type~="z3998:salutation"]{
 table{
 	border-collapse: separate;
 	border-spacing: 0 .75em;
-	counter-reset: rownum rowltr;
 	margin: 1em auto;
 }
 
@@ -68,28 +67,9 @@ td + td{
 	padding-left: 1em;
 }
 
-tr td:first-child::before{
-	content: "(" counter(rownum) ") ";
-	counter-increment: rownum;
-	float: left;
-}
-
 tr:nth-child(12) td:first-child p,
 tr:nth-child(13) td:first-child p,
 tr:nth-child(14) td:first-child p{
 	margin-left: 2em;
-}
-
-tr:nth-child(12) td:first-child::before,
-tr:nth-child(13) td:first-child::before,
-tr:nth-child(14) td:first-child::before{
-	content: "(" counter(rowltr, lower-alpha) ") ";
-	counter-increment: rowltr;
-	float: left;
-	text-indent: 2em;
-}
-
-tr:nth-child(14) td:first-child::before{
-	counter-reset: rownum 11;
 }
 /* End ch 9 table */
